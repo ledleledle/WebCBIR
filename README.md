@@ -19,3 +19,9 @@ Note : if you use <code>virtualenv</code> you don't need to install all the requ
 - Then just run the python file <code>python runner.py</code>
 - Open <code>localhost:5000</code> on your browser
 - Enjoy
+
+# Preview
+- Before Searching
+![alt text](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/Screenshot_2019-12-30_12-24-39.png)
+- After Searching
+![alt_text](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/Screenshot_2019-12-30_12-33-36.png)
