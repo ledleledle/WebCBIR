@@ -8,6 +8,8 @@ This repo reffer from this <a href="https://github.com/ledleledle/CBIR">Reposito
 
 Note : if you use <code>virtualenv</code> you don't need to install all the requirements, but if you using some local or cloud server like nginx or something, you must install all requirements!!!
 -
+
+# Requirement (if you're not using virtualenv)
 - imuitils
 - python-opencv
 - numpy
@@ -19,8 +21,9 @@ Note : if you use <code>virtualenv</code> you don't need to install all the requ
 - Then just run the python file <code>python runner.py</code>
 - Open <code>localhost:5000</code> on your browser
 - Enjoy
+- If you want to update the dataset, you can do it from web in the top right corner and follow the instructions. Or just do it from terminal (after you copy or change the images) run <code>python index-console.py</code>
 
-FYI : if you got error when running this project, delete folder <code>venv</code> make new <code>virtualenv</code> and install all the requirements!
+FYI : if you got error when running this project, delete folder <code>venv</code> make new <code>virtualenv</code> and install all the requirements or just rename the project to <code>webcbir</code> lowercase!
 -
 
 # Preview
