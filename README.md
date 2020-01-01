@@ -16,6 +16,8 @@ Note : if you use <code>virtualenv</code> you don't need to install all the requ
 - Pillow
 - flask
 
+Naaahhh... Just run <code>pip install -r requirements.txt</code>
+
 # Usage
 - Go to cloned folder and activate <code>virtualenv</code>. Run <code>. venv/bin/activate</code>
 - Then just run the python file <code>python runner.py</code>
@@ -23,7 +25,7 @@ Note : if you use <code>virtualenv</code> you don't need to install all the requ
 - Enjoy
 - If you want to update the dataset, you can do it from web in the top right corner and follow the instructions. Or just do it from terminal (after you copy or change the images) run <code>python index-console.py</code>
 
-FYI : if you got error when running this project, delete folder <code>venv</code> make new <code>virtualenv</code> and install all the requirements or just rename the project to <code>webcbir</code> lowercase!
+FYI : if you got error when running this project, delete folder <code>venv</code> make new <code>virtualenv</code> and install all the requirements or just rename the project to <code>webcbir</code> lowercase! Or (again) run <code>virtualenv --relocatable</code> command on your terminal.
 -
 
 # Preview
