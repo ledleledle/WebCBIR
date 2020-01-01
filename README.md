@@ -29,7 +29,6 @@ FYI : if you got error when running this project, delete folder <code>venv</code
 -
 
 # Preview
-- Sorry the preview still broken, i make some update on the front end. So... i delete all the screenshoots and will be update soon.... :) 
 - Before Searching
 ![preview1](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/screencapture-localhost-5000-home-2020-01-02-06_11_11.png)
 - After Searching
