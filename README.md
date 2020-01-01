@@ -31,8 +31,8 @@ FYI : if you got error when running this project, delete folder <code>venv</code
 # Preview
 - Sorry the preview still broken, i make some update on the front end. So... i delete all the screenshoots and will be update soon.... :) 
 - Before Searching
-![preview1](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/Screenshot_2019-12-30_12-24-39.png)
+![preview1](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/screencapture-localhost-5000-home-2020-01-02-06_11_11.png)
 - After Searching
-![preview2](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/Screenshot_2019-12-30_12-33-36.png)
+![preview2](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/screencapture-localhost-5000-home-2020-01-02-06_10_32.png)
 
 My method is, you upload the image, opencv and numpy process your image, system will save image to the temporary folder, showing the result, and the <code>app.route('/')</code> i use for checking the temporary folder is there exist or not. I will keep update this project and keep find the best method for best result. Hope you enjoy
