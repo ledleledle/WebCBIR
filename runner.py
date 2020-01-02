@@ -44,10 +44,12 @@ def search():
 
 	os.makedirs('static/temp')
 	os.makedirs('static/tmp')
-	 
+	
+	i = 1
 	for (score, resultID) in results:
+		i += 1
 		result = cv2.imread("static/coba/" + resultID)
-		saveimg = cv2.imwrite("static/temp/" + str(score) + ".jpeg", result)
+		saveimg = cv2.imwrite("static/temp/" + str(score) + str(i) + ".jpeg", result)
 
 	imgstr = time.strftime("%Y%m%d-%H%M%S")
 	cv2.imwrite("static/tmp/"+ imgstr +".jpeg", query)

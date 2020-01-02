@@ -19,8 +19,8 @@ cv2.imshow("Gambar yang dicari", query)
  
 for (score, resultID) in results:
 	result = cv2.imread("static/coba/" + resultID)
-	cv2.imwrite(resultID, result)
-	#cv2.imshow("Hasil", result)
+	#cv2.imwrite(resultID, result)
+	cv2.imshow("Hasil", result)
 	print(resultID," ==> ",score)
 
-	#cv2.waitKey(0)
+	cv2.waitKey(0)

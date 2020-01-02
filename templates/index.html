@@ -103,7 +103,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Nilai Terbaik</h5>
-                      <span class="h2 font-weight-bold mb-0">{{ nearest[-0:-5] }}</span>
+                      <span class="h2 font-weight-bold mb-0">{{ nearest[-0:-6] }}</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-success text-white rounded-circle shadow">
@@ -148,7 +148,7 @@
                           <td>{{ count.value }}</td>
                           {% set count.value = count.value + 1 %}
                           <td><img class="img-responsive" src="static/temp/{{image_name}}"></td>
-                          <td>{{image_name[-0:-5]}}</td>
+                          <td>{{image_name[-0:-6]}}</td>
                         </tr>
                     {% endfor %}
                   </tbody>

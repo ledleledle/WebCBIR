@@ -5,7 +5,7 @@ import cv2
 cd = ColorDescriptor((8, 12, 3))
 output = open("index.csv", "w")
  
-for imagePath in glob.glob("coba/*"):
+for imagePath in glob.glob("static/coba/*"):
 	imageID = imagePath[imagePath.rfind("/") + 1:]
 	image = cv2.imread(imagePath)
  
