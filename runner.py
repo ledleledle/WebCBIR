@@ -21,12 +21,14 @@ def cekawal():
 
 @app.route('/home')
 def home():
+	datasets = os.listdir('static/coba')
 	if os.path.exists('static/temp') == True :
 		image_names = os.listdir('static/temp')
+		nearest = os.listdir('static/temp')[1]
 		target = os.listdir('static/tmp')
-		return render_template("index.html", image_names=sorted(image_names), target=(target), aw=1)
+		return render_template("index.html", image_names=sorted(image_names), target=(target), aw=1, count=len(datasets), nearest=(nearest))
 	else :
-		return render_template("index.html", aw=2)
+		return render_template("index.html", aw=2, count=len(datasets))
 
 @app.route('/search', methods=['POST'])
 def search():

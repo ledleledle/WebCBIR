@@ -67,7 +67,11 @@
                       <button type="reset"  class="btn btn-danger my-4" value="Reset"><i class="ni ni-fat-remove"></i> Reset</button>
                     {% else %}
                     {% for turget in target %}
-                      <img src="static/tmp/{{turget}}">
+                    <div class="row">
+                      <div class="col-xl-12">
+                        <img src="static/tmp/{{turget}}">
+                    </div>
+                    </div>
                     {% endfor %}
                       <a href="/" class="btn btn-primary my-4"><i class="ni ni-button-power"></i> Cari lagi</a>
                     {% endif %}
@@ -75,12 +79,43 @@
                 </form>
                 </div>
               </div>
-              <div class="text-center">
-              </div>
             </form>
             </div>
-          </div>
+          </div><br>
+          <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Dataset Tersedia</h5>
+                      <span class="h2 font-weight-bold mb-0">{{ count }} Gambar</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% if aw == 1 %}
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Nilai Terbaik</h5>
+                      <span class="h2 font-weight-bold mb-0">{{ nearest[-0:-5] }}</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-success text-white rounded-circle shadow">
+                        <i class="ni ni-chart-bar-32"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
         </div>
+
         <!--end of pick picture -->
 
         <div class="col-xl-8 mb-5 mb-xl-0">
