@@ -30,7 +30,7 @@ FYI : if you got error when running this project, delete folder <code>venv</code
 
 # Preview
 - Before Searching
-![preview1](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/wtf1.png)
+![preview1](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/wtf3.png)
 - After Searching
 ![preview2](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/wtf2.png)
 
