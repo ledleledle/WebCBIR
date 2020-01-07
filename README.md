@@ -30,8 +30,8 @@ FYI : if you got error when running this project, delete folder <code>venv</code
 
 # Preview
 - Before Searching
-![preview1](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/ss1.png)
+![preview1](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/wtf1.png)
 - After Searching
-![preview2](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/ss2.png)
+![preview2](https://raw.githubusercontent.com/ledleledle/WebCBIR/master/wtf2.png)
 
 My method is, you upload the image, opencv and numpy process your image, system will save image to the temporary folder, showing the result, and the <code>app.route('/')</code> i use for checking the temporary folder is there exist or not. I will keep update this project and keep find the best method for best result. Hope you enjoy
