@@ -183,14 +183,15 @@
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
-                  <h6 class="text-uppercase text-light ls-1 mb-1"><i class="ni ni-tv-2"></i> Result</h6>
+                  <h6 class="text-uppercase text-light ls-1 mb-2"><i class="ni ni-tv-2"></i> Result</h6>
                   <h2 class="text-white mb-0">Hasil Pencarian</h2>
                 </div>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="height: 350px">
                 {% if aw == 2 %}
-                  Belum ada hasil, karena belum dicari <i class="ni ni-user-run"></i> Kalo udah bakalan muncul kok
+                  <p class="text-white">Masih <b>Belum</b> ada hasil,<br><b>Karena belum dicari</b> <i class="ni ni-user-run"></i><br>Kalau sudah <b>pasti bakalan</b> muncul kok ...
+                  <br><br>Kalau terjadi <b>error</b> komplain disini <i class="fas fa-hand-point-right"></i> <b><a target="_blank" href="https://github.com/ledleledle/WebCBIR/issues/new">Github Open Issue</a></b><br><br>Big <i class="fas fa-heart text-danger"></i> from <b>Developer</b></p>
                 {% else %}
                 <div class="table-responsive">
                 <table class="table align-items-center table-flush text-white">
