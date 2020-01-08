@@ -48,7 +48,8 @@ def home():
 		image_names = os.listdir('static/temp')
 		nearest = sorted(os.listdir('static/temp'))[0]
 		target = os.listdir('static/tmp')
-		return render_template("index.html", f1=(f1), akurasi=(akurasi), presisi=(presisi), rekal=(rekal), image_names=sorted(image_names), target=(target), aw=1, count=len(datasets), nearest=(nearest))
+		return render_template("index.html", f1=(f1), akurasi=(akurasi), presisi=(presisi), rekal=(rekal), image_names=sorted(image_names),\
+		target=(target), aw=1, count=len(datasets), nearest=(nearest))
 	else :
 		return render_template("index.html", aw=2, count=len(datasets))
 
