@@ -2,21 +2,30 @@
 
 This repo reffer from this <a href="https://github.com/ledleledle/CBIR">Repository</a> and i just convert it to some web. I'm using <a href="https://demos.creative-tim.com/argon-dashboard-pro/">Argon Template</a> which its nice :) . Its just like google image search but i just showing 5 picture most relevant (hopefully most relevant with object). Like always... Its just a school project. The datasets focus on desert, sea and mountain, also i add some wrong random image for testing. Sadly the datasets still have duplicate :(
 
-# Requirement
+# Dependencies that we need
 - Python 3.x
 - virtualenv
 
-Note : if you use <code>virtualenv</code> you don't need to install all the requirements, but if you using some local or cloud server like nginx or something, you must install all requirements!!!
--
+# Installation
+### Arch Linux
+```
+sudo pacman -Syu python-pip
+pip install virtualenv
+```
 
-# Requirement (if you're not using virtualenv)
-- imuitils
-- python-opencv
-- numpy
-- Pillow
-- flask
+### Ubuntu
+```
+sudo apt-get install python3-pip
+pip3 install virtualenv
+```
 
-Naaahhh... Just run <code>pip install -r requirements.txt</code>
+### Windows User
+```
+GTFO lossers!!!
+```
+
+# Requirements
+Just run <code>pip install -r requirements.txt</code> and you'll be okay.
 
 # Usage
 - Go to cloned folder and activate <code>virtualenv</code>. Run <code>. venv/bin/activate</code>
@@ -25,8 +34,6 @@ Naaahhh... Just run <code>pip install -r requirements.txt</code>
 - Enjoy
 - If you want to update the dataset, Just do it from terminal (after you copy or change the images) run <code>python index-console.py</code>
 
-FYI : if you got error when running this project, delete folder <code>venv</code> make new <code>virtualenv</code> and install all the requirements or just rename the project to <code>webcbir</code> lowercase! Or (again) run <code>virtualenv --relocatable</code> command on your terminal.
--
 
 # Preview
 - Before Searching
