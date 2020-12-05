@@ -62,14 +62,14 @@
                   <form action="/search" method="post" enctype="multipart/form-data">
                   <div class="text-center">
                     {% if aw == 2 %}
-                      <input type="file" required name="image" style="margin-bottom: 30px; margin-top: 20px;">
+                      <input type="file" required name="image" accept="image/*" style="margin-bottom: 30px; margin-top: 20px;">
                       <button type="submit" class="btn btn-primary my-4" value="Submit"><i class="ni ni-send"></i> Cari Gambar</button>
                       <button type="reset"  class="btn btn-danger my-4" value="Reset"><i class="ni ni-fat-remove"></i> Reset</button>
                     {% else %}
                     {% for turget in target %}
                     <div class="row">
                       <div class="col-xl-12">
-                        <img src="static/tmp/{{turget}}">
+                        <img class="img-fluid" src="static/tmp/{{turget}}">
                     </div>
                     </div>
                     {% endfor %}

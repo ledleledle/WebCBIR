@@ -9,8 +9,7 @@ This repo reffer from this <a href="https://github.com/ledleledle/CBIR">Reposito
 # Installation
 ### Arch Linux
 ```
-sudo pacman -Syu python-pip
-pip install virtualenv
+sudo pacman -Syu python-pip python-virtualenv
 ```
 
 ### Ubuntu
@@ -24,11 +23,9 @@ pip3 install virtualenv
 GTFO lossers!!!
 ```
 
-# Requirements
-Just run <code>pip install -r requirements.txt</code> and you'll be okay.
-
 # Usage
-- Go to cloned folder and activate <code>virtualenv</code>. Run <code>. venv/bin/activate</code>
+- Go to cloned folder and create virual environment `virtualenv venv` and then activate **virtualenv**. Run <code>source venv/bin/activate</code>
+- For requirements. Just run <code>pip install -r requirements.txt</code> and you'll be okay.
 - Then just run the python file <code>python runner.py</code>
 - Open <code>localhost:5000</code> on your browser
 - Enjoy
@@ -44,3 +41,6 @@ Just run <code>pip install -r requirements.txt</code> and you'll be okay.
 My method is, you upload the image, opencv and numpy process your image, system will save image to the temporary folder, showing the result, and the <code>app.route('/')</code> i use for checking the temporary folder is there exist or not. I will keep update this project and keep find the best method for best result. Hope you enjoy
 
 Sorry for my bad English :(
+
+# Note
+Make PR's if you have any problem. Cheers 🍻
