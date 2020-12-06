@@ -15,3 +15,4 @@ for imagePath in glob.glob("static/coba/*"):
 	output.write("%s,%s\n" % (imageID, ",".join(features)))
  
 output.close()
+print ("Job Done, Dataset Updated!")
