@@ -27,16 +27,9 @@ pip3 install virtualenv
 Too much GUI Installer and a bit tricky compared by Linux, and I didn't like that alot.<br>
 [Follow this tutorial to install Python, pip and virtualenv](https://phoenixnap.com/kb/how-to-install-python-3-windows). Then you'll be okay. Also, if you're facing problem like this.
 ```
-
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\users\\sweet\\appdata\\local\\programs\\python\\python37\\Lib\\venv\\scripts\\nt\\python.exe'
 ```
-Copy
-```
-
-```
-Then paste on
-```
-
-```
+Then you'll have to [read this](https://stackoverflow.com/questions/55380296/how-to-fix-error-errno-2-no-such-file-or-directory-c-program-files-pytho)!
 <br>
 **FYI** : For Windows users. No **GUI** please, only **CMD**.
 
