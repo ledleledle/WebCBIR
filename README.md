@@ -2,6 +2,7 @@
 
 This repo reffer from this <a href="https://github.com/ledleledle/CBIR">Repository</a> and i just convert it to some web. I'm using <a href="https://demos.creative-tim.com/argon-dashboard-pro/">Argon Template</a> which its nice :) . Its just like google image search but i just showing 5 picture most relevant (hopefully most relevant with object). Like always... Its just a school project. The datasets focus on desert, sea and mountain, also i add some wrong random image for testing. Sadly the datasets still have duplicate :(
 
+### Before you start
 > - Don't ask me how to clone retard :)
 > - This is development server if you want to host on production server, you find out your own way!
 > - For Windows users, i highly recommended using [Python 3.7.0](https://www.python.org/ftp/python/3.7.0/python-3.7.0.exe) or [Python 3.6.0](https://www.python.org/ftp/python/3.6.0/python-3.6.0.exe)
@@ -23,9 +24,21 @@ pip3 install virtualenv
 ```
 
 ### Windows
-[Follow this tutorial](https://www.c-sharpcorner.com/article/steps-to-set-up-a-virtual-environment-for-python-development). Then you'll be okay.
+Too much GUI Installer and a bit tricky compared by Linux, and I didn't like that alot.<br>
+[Follow this tutorial to install Python, pip and virtualenv](https://phoenixnap.com/kb/how-to-install-python-3-windows). Then you'll be okay. Also, if you're facing problem like this.
+```
+
+```
+Copy
+```
+
+```
+Then paste on
+```
+
+```
 <br>
-**FYI :** For Windows users. No GUI please, only `CMD`.
+**FYI** : For Windows users. No **GUI** please, only **CMD**.
 
 # Usage
 - Go to cloned folder `cd WebCBIR`
