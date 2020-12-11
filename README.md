@@ -18,9 +18,10 @@ sudo pacman -Syu python-pip python-virtualenv
 ```
 
 ### Ubuntu
+[Follow this tutorial!](https://linoxide.com/linux-how-to/setup-python-virtual-environment-ubuntu). And
 ```
-sudo apt update -y
-sudo apt install -y python3-venv
+pip install --upgrade pip
+sudo apt install libgl1-mesa-glx
 ```
 
 ### Windows
