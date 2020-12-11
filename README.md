@@ -18,10 +18,10 @@ sudo pacman -Syu python-pip python-virtualenv
 ```
 
 ### Ubuntu
+[Follow this tutorial!](https://linoxide.com/linux-how-to/setup-python-virtual-environment-ubuntu). And
 ```
-sudo apt update -y
-sudo apt install -y python3-venv
-
+pip install --upgrade pip
+sudo apt install libgl1-mesa-glx
 ```
 
 ### Windows
@@ -36,15 +36,7 @@ Then you'll have to [read this](https://stackoverflow.com/questions/55380296/how
 
 # Usage
 - Go to cloned folder `cd WebCBIR`
-- Create virual environment<br>
-**Arch Linux && Windows**
-```
-virtualenv venv
-```
-**Ubuntu**
-```
-python3 -m venv awesome_venv
-```
+- Create virual environment `virtualenv venv`
 - Activate **virtualenv**. Run <code>source venv/bin/activate</code> for **Linux Family** or if you're **Windows user** run `.\venv\Scripts\activate.bat`
 - For requirements. Just run <code>pip install -r requirements.txt</code> and you'll be okay.
 - Then just run the python file <code>python runner.py</code>
