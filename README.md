@@ -35,7 +35,7 @@ Then you'll have to [read this](https://stackoverflow.com/questions/55380296/how
 # Usage
 ### Basic Usage
 - Go to cloned folder `cd WebCBIR`
-- Create virual environment **Arch Linux & Windows** `virtualenv venv` and for **Ubuntu** `python3 -m venv awesome_venv`
+- Create virual environment **Arch Linux & Windows** `virtualenv venv` and for **Ubuntu** `python3 -m venv venv`
 - Activate **virtualenv**. Run <code>source venv/bin/activate</code> for **Linux Family** or if you're **Windows user** run `.\venv\Scripts\activate.bat`
 - Upgrade pip `pip install --upgrade pip`
 - For requirements. Just run <code>pip install -r requirements.txt</code> and you'll be okay.
@@ -43,11 +43,16 @@ Then you'll have to [read this](https://stackoverflow.com/questions/55380296/how
 - Open <code>localhost:5000</code> on your browser
 - Enjoy
 - If you want to update the dataset, Just do it from terminal (after you copy or change the images) run <code>python index-console.py</code>
+
 ### Docker
 We don't need install everything else, just install docker
 ```
 docker build -t webcbir .
-docker run -d --name webcbir -p 5000:5000 webcbir
+docker run -d --name webcbir -p 5000:5000 -v path_to_cloned_folder:/app webcbir
+```
+If you have any changes on source code, just restart the container
+```
+docker container restart webcbir
 ```
 
 # Preview
