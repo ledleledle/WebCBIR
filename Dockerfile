@@ -5,5 +5,4 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update -y
 RUN apt install libgl1-mesa-glx libglib2.0-0 -y
 RUN pip install -r requirements.txt
-EXPOSE 5000
-CMD ["python", "runner.py"]
+CMD ["python3", "runner.py"]

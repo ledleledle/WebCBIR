@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: cbir
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      name: cbir
+  template:
+    metadata:
+      name: cbir
+      labels:
+        name: cbir
+    spec:
+#      volumes:
+#        - name: cbir-vol
+#          hostPath:
+#            path: /home/ubuntu/WebCBIR
+#            type: DirectoryOrCreate
+      containers:
+        - name: cbir
+          image: leon0408/cbir
+#          volumeMounts:
+ #           - mountPath: /app
+#              name: cbir-vol
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              cpu: 500m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 900Mi
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: cbir-service
+spec:
+  type: LoadBalancer
+  selector:
+    name: cbir
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30001
