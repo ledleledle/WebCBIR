@@ -2,6 +2,9 @@
 
 This repo reffer from this <a href="https://github.com/ledleledle/CBIR">Repository</a> and i just convert it to some web. I'm using <a href="https://demos.creative-tim.com/argon-dashboard-pro/">Argon Template</a> which its nice :) . Its just like google image search but i just showing 5 picture most relevant (hopefully most relevant with object). Like always... Its just a school project. The datasets focus on desert, sea and mountain, also i add some wrong random image for testing. Sadly the datasets still have duplicate :(
 
+## Demo
+Go to [cbir.leonprasetya.my.id](https://cbir.leonprasetya.my.id)
+
 ### Before you start
 > - Don't ask me how to clone retard :)
 > - My recommendation you have to use docker

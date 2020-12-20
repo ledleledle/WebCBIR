@@ -1,3 +1,32 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 4Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/home/ubuntu/WebCBIR"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -13,29 +42,27 @@ spec:
       labels:
         name: cbir
     spec:
-#      volumes:
-#        - name: cbir-vol
-#          hostPath:
-#            path: /home/ubuntu/WebCBIR
-#            type: DirectoryOrCreate
+      volumes:
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: task-pv-claim
       containers:
         - name: cbir
           image: leon0408/cbir
-#          volumeMounts:
- #           - mountPath: /app
-#              name: cbir-vol
           ports:
             - containerPort: 5000
+          volumeMounts:
+            - mountPath: "/app"
+              name: task-pv-storage
           resources:
             requests:
               cpu: 500m
               memory: 512Mi
             limits:
-              cpu: 1000m
+              cpu: 500m
               memory: 900Mi
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
