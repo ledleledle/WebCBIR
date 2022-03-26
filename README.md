@@ -20,9 +20,10 @@ sudo pacman -Syu python-pip python-virtualenv
 ```
 
 ### Ubuntu
+[Follow this tutorial!](https://linoxide.com/linux-how-to/setup-python-virtual-environment-ubuntu). And
 ```
-sudo apt update -y
-sudo apt install -y python3-venv
+pip install --upgrade pip
+sudo apt install libgl1-mesa-glx
 ```
 
 ### Windows
@@ -65,9 +66,9 @@ docker container restart webcbir
 ![preview2](screenshots/2.png)
 
 # Note
-Make PR's if you have any problem. Cheers 🍻
+Make PR's if you have any problem and done solving it, or maybe you want contribute in this repository, I will very welcome you guys. Cheers 🍻
 
 # TODO
 - [X] Responsive Design
-- [ ] Add & Update Dataset
-- [ ] Increasing searching speed
+- [ ] Add & Update Dataset Feature
+- [ ] Add more dataset for more acuracy 
