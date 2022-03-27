@@ -8,6 +8,8 @@ import os
 import shutil
 import time
 import csv
+from paste.translogger import TransLogger
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -49,9 +51,9 @@ def home():
 		nearest = sorted(os.listdir('static/temp'))[0]
 		target = os.listdir('static/tmp')
 		return render_template("index.html", f1=(f1), akurasi=(akurasi), presisi=(presisi), rekal=(rekal), image_names=sorted(image_names),\
-		target=(target), aw=1, count=len(datasets), nearest=(nearest))
+		target=(target), page_status=1, count=len(datasets), nearest=(nearest))
 	else :
-		return render_template("index.html", aw=2, count=len(datasets))
+		return render_template("index.html", page_status=2, count=len(datasets))
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -94,11 +96,7 @@ def search():
 
 @app.route('/<page_name>')
 def other_page(page_name):
-	response = make_response('The page named %s does not exist.' \
-                             % page_name, 404)
-	return response
+	return render_template("404.html"), 404
 
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=5000)
-	  # app.run(debug=True)
+	serve(TransLogger(app, setup_console_handler=False), host="0.0.0.0", port=5000)

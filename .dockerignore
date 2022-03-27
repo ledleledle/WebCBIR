@@ -1,3 +1,5 @@
 venv
 README.md
 screenshots
+static/datasets
+Dockerfile

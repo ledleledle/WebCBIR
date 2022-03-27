@@ -6,8 +6,8 @@ This repo reffer from this <a href="https://github.com/ledleledle/CBIR">Reposito
 Go to [cbir.leonprasetya.my.id](https://cbir.leonprasetya.my.id)
 
 ### Before you start
-> - Don't ask me how to clone retard :)
-> - My recommendation you have to use docker
+> - Don't ask me how to clone retard :')
+> - Basic understanding of linux command line, python and docker
 
 # Dependencies that we need
 - Python 3.x
@@ -39,20 +39,21 @@ Then you'll have to [read this](https://stackoverflow.com/questions/55380296/how
 # Usage
 ### Basic Usage
 - Go to cloned folder `cd WebCBIR`
-- Create virual environment **Arch Linux & Windows** `virtualenv venv` and for **Ubuntu** `python3 -m venv venv`
+- **Windows** `virtualenv venv` and for **Arch Linux & Ubuntu** `python3 -m venv venv`
 - Activate **virtualenv**. Run <code>source venv/bin/activate</code> for **Linux Family** or if you're **Windows user** run `.\venv\Scripts\activate.bat`
 - Upgrade pip `pip install --upgrade pip`
 - For requirements. Just run <code>pip install -r requirements.txt</code> and you'll be okay.
+- Make sure, you already check `conf` directory, if nothing inside this directory, you can initialize with `python init.py` then recheck again, if `index.csv` and `conf.csv` has generated you're good to go.
 - Then just run the python file <code>python runner.py</code>
 - Open <code>localhost:5000</code> on your browser
 - Enjoy
-- If you want to update the dataset, Just do it from terminal (after you copy or change the images) run <code>python index-console.py</code>
+- If you want to update the dataset, Just do it from terminal (after you copy or change the images) run <code>python init.py</code>, this command will will generated `conf/index.csv` file.
 
 ### Docker
 We don't need install everything else, just install docker
 ```
 docker build -t webcbir .
-docker run -d --name webcbir -p 5000:5000 -v ./static/coba:/app/static/coba -v ./conf:/app/conf webcbir
+docker run -d --name webcbir -p 5000:5000 -v $(pwd)/static/datasets:/app/datasets/coba -v $(pwd)/conf:/app/conf webcbir
 ```
 If you have any changes on source code, just restart the container
 ```
