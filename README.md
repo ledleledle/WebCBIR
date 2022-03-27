@@ -52,7 +52,7 @@ Then you'll have to [read this](https://stackoverflow.com/questions/55380296/how
 We don't need install everything else, just install docker
 ```
 docker build -t webcbir .
-docker run -d --name webcbir -p 5000:5000 -v path_to_cloned_folder:/app webcbir
+docker run -d --name webcbir -p 5000:5000 -v ./static/coba:/app/static/coba -v ./conf:/app/conf webcbir
 ```
 If you have any changes on source code, just restart the container
 ```

@@ -1,6 +1,6 @@
 from flask import Flask, make_response, render_template, request, redirect
-from libnya.colordescriptor import ColorDescriptor
-from libnya.pencari import Searcher
+from lib.colordescriptor import ColorDescriptor
+from lib.searcher import Searcher
 from PIL import Image
 import numpy as np
 import cv2
@@ -22,7 +22,7 @@ def cekawal():
 
 @app.route('/home')
 def home():
-	with open('conf.csv','r') as conf:
+	with open('conf/conf.csv','r') as conf:
 		tp = 0
 		tn = 0
 		fp = 0
@@ -43,7 +43,7 @@ def home():
 	rekal = round(((tp/(fn+tp))*100),2)
 	f1 = round((2*(rekal*presisi)/(rekal+presisi)),2)
 
-	datasets = os.listdir('static/coba')
+	datasets = os.listdir('static/datasets')
 	if os.path.exists('static/temp') == True :
 		image_names = os.listdir('static/temp')
 		nearest = sorted(os.listdir('static/temp'))[0]
@@ -64,7 +64,7 @@ def search():
 	
 	features = cd.describe(query)
 	 
-	searcher = Searcher('index.csv')
+	searcher = Searcher('conf/index.csv')
 	results = searcher.search(features)
 
 	positif=['mou','sea','des']
@@ -74,7 +74,7 @@ def search():
 	fp = 1 if nama not in positif and nama == observ else 0
 	fn = 1 if nama in positif and nama != observ else 0
 	conma = [tp,tn,fp,fn]
-	with open('conf.csv','a') as conf:
+	with open('conf/conf.csv','a') as conf:
 		tulis = csv.writer(conf)
 		tulis.writerow(conma)
 	conf.close
@@ -85,7 +85,7 @@ def search():
 	i = 1
 	for (score, resultID) in results:
 		i += 1
-		result = cv2.imread("static/coba/" + resultID)
+		result = cv2.imread("static/datasets/" + resultID)
 		saveimg = cv2.imwrite("static/temp/" + str(score) + str(i) + ".jpeg", result)
 
 	imgstr = time.strftime("%Y%m%d-%H%M%S")

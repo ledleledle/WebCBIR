@@ -1,11 +1,11 @@
-from libnya.colordescriptor import ColorDescriptor
+from lib.colordescriptor import ColorDescriptor
 import glob
 import cv2
  
 cd = ColorDescriptor((8, 12, 3))
-output = open("index.csv", "w")
+output = open("conf/index.csv", "w")
  
-for imagePath in glob.glob("static/coba/*"):
+for imagePath in glob.glob("static/datasets/*"):
 	imageID = imagePath[imagePath.rfind("/") + 1:]
 	image = cv2.imread(imagePath)
  
