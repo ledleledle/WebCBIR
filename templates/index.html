@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Pola CBIR</title>
+  <title>WebCBIR</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
@@ -21,7 +21,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <span class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block">Content Based Image Retrival</span>
+        <span class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"><a href="/" class="mb-0 text-sm font-weight-bold text-white">Content Based Image Retrival</a></span>
         <div class="media align-items-center">
           <div class="media-body ml-2 d-none d-lg-block">
             <a href="#" class="mb-0 text-sm  font-weight-bold text-white">Update Dataset</a>
@@ -47,7 +47,7 @@
                 <div class="col">
                   <h6 class="text-uppercase text-muted ls-1 mb-1"><i class="ni ni-folder-17"></i> Upload</h6>
                   <h2 class="mb-0">
-                    {% if aw == 2 %}
+                    {% if page_status == 2 %}
                       Pick Your Picture
                     {% else %}
                       Your Picture
@@ -61,9 +61,9 @@
                 <div class="form-group">
                   <form action="/search" method="post" enctype="multipart/form-data">
                   <div class="text-center">
-                    {% if aw == 2 %}
+                    {% if page_status == 2 %}
                       <input type="file" required name="image" accept="image/*" style="margin-bottom: 30px; margin-top: 20px;">
-                      <button type="submit" class="btn btn-primary my-4" value="Submit"><i class="ni ni-send"></i> Cari Gambar</button>
+                      <button type="submit" class="btn btn-primary my-4" value="Submit"><i class="ni ni-send"></i> Find Image</button>
                       <button type="reset"  class="btn btn-danger my-4" value="Reset"><i class="ni ni-fat-remove"></i> Reset</button>
                     {% else %}
                     {% for turget in target %}
@@ -73,7 +73,7 @@
                     </div>
                     </div>
                     {% endfor %}
-                      <a href="/" class="btn btn-primary my-4"><i class="ni ni-button-power"></i> Cari lagi</a>
+                      <a href="/" class="btn btn-primary my-4"><i class="ni ni-button-power"></i> Find Again</a>
                     {% endif %}
                 </div>
                 </form>
@@ -86,8 +86,8 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Dataset Tersedia</h5>
-                      <span class="h2 font-weight-bold mb-0">{{ count }} Gambar</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Curent Datasets</h5>
+                      <span class="h2 font-weight-bold mb-0">{{ count }} Images</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -97,12 +97,12 @@
                   </div>
                 </div>
               </div>
-              {% if aw == 1 %}
+              {% if page_status == 1 %}
               <div class="card card-stats mb-4 mb-xl-0">
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Nilai Terbaik</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Best Result</h5>
                       <span class="h2 font-weight-bold mb-0">{{ nearest[-0:-6] }}</span>
                     </div>
                     <div class="col-auto">
@@ -117,7 +117,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Akurasi</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Accuration</h5>
                       <span class="h2 font-weight-bold mb-0">{{ akurasi }} %</span>
                     </div>
                     <div class="col-auto">
@@ -132,7 +132,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Presisi</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Precision</h5>
                       <span class="h2 font-weight-bold mb-0">{{ presisi }} %</span>
                     </div>
                     <div class="col-auto">
@@ -184,12 +184,12 @@
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-uppercase text-light ls-1 mb-2"><i class="ni ni-tv-2"></i> Result</h6>
-                  <h2 class="text-white mb-0">Hasil Pencarian</h2>
+                  <h2 class="text-white mb-0">Search Result</h2>
                 </div>
               </div>
             </div>
-            <div class="card-body" {% if aw == 2 %} style="height: 350px" {% endif %}>
-                {% if aw == 2 %}
+            <div class="card-body" {% if page_status == 2 %} style="height: 350px" {% endif %}>
+                {% if page_status == 2 %}
                   <p class="text-white">Masih <b>Belum</b> ada hasil,<br><b>Karena belum dicari</b> <i class="ni ni-user-run"></i><br>Kalau sudah <b>pasti bakalan</b> muncul kok ...
                   <br><br>Kalau terjadi <b>error</b> komplain disini <i class="fas fa-hand-point-right"></i> <b><a target="_blank" href="https://github.com/ledleledle/WebCBIR/issues/new">Github Open Issue</a></b><br><!-- <br>Big <i class="fas fa-heart text-danger"></i> from <b>Developer Ganteng</b></p> -->
                 {% else %}
@@ -198,8 +198,8 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">No.</th>
-                      <th scope="col">Gambar</th>
-                      <th scope="col">Nilai</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Score</th>
                     </tr>
                   </thead>
                   <tbody>
