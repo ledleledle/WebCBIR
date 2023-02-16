@@ -20,4 +20,4 @@ PyWavelets==1.1.1
 scipy==1.5.4
 six==1.15.0
 waitress==1.4.4
-Werkzeug==1.0.1
+Werkzeug==2.2.3
